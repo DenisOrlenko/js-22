@@ -4,6 +4,37 @@
  *  - super()
  */
 
+class Hero1 {
+    constructor({ name = 'hero', xp = 0 } = {}) {
+        this.name = name;
+        this.xp = xp;
+    }
+    gainXp(amount) {
+        console.log(`${this.name} получает ${amount} опыта`);
+        this.xp += amount;
+    }
+}
+
+class Warrior1 extends Hero1 {
+    constructor({ weapon, ...restProps } = {}) {
+        // super();
+        super(restProps);
+    }
+}
+
+const mango = new Warrior1({ name: 'Манго', xp: 100 });
+console.log('mango:', mango);
+mango.gainXp(1000);
+console.log('mango:', mango);
+//
+//
+//
+//
+//
+//
+//
+//
+
 class Hero {
     constructor({ name = 'hero', xp = 0 } = {}) {
         this.name = name;
